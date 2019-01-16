@@ -1,3 +1,33 @@
 html {
   background-color: lavenderblush;
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+/* Color Pallete! https://www.color-hex.com/color-palette/1835 */
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #800080;
+}
+
+th, td {
+  text-align: left;
+  padding: 20px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #efbbff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #d896ff;
+}
+
+pre {
+  background-color: #660066;
+  color: #efefef;
+  font-family: monospace;
+  font-size: 1.125rem;
+  padding: 20px;
 }

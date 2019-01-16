@@ -16,7 +16,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   
-  const markown = graphql(`
+  const markown = () => graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -46,16 +46,12 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  const contentful = graphql(`
+  const contentful = () => graphql(`
     {
-      allContentfulPage {
+      allContentfulDataLayer {
         edges {
           node {
             id
-            name
-            pageInfo {
-              destinationUrl
-            }
           }
         }
       }
@@ -65,10 +61,10 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
     
-    result.data.allContentfulPage.edges.forEach(({node}) => {
+    result.data.allContentfulDataLayer.edges.forEach(({node}) => {
       createPage({
         path: `/page/${node.id}/`,
-        component: path.resolve(`./src/templates/content-type-page.js`),
+        component: path.resolve(`./src/templates/content-type-datalayer.js`),
         context: {
           id: node.id
         },
@@ -76,5 +72,5 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  return Promise.all[markown, contentful]
+  return Promise.all[markown(), contentful()]
 }

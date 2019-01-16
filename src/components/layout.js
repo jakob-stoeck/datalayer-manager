@@ -21,17 +21,11 @@ export default ({children}) => (
     `
   }
   render={data => (
-    <div
-      css={css`
-        margin: 3rem auto;
-        max-width: 650px;
-        padding: 1rem;
-      `}
-    >
+    <div css={css` margin: 3rem auto; max-width: 650px; padding: 1rem; `}>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My Title</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+        <title>{data.site.siteMetadata.title}</title>
+        {/*<link rel="canonical" href="http://mysite.com/example" />*/}
       </Helmet>
       <header style={{ marginBottom: `1.5rem` }}>
         <Link to="/">
@@ -42,8 +36,8 @@ export default ({children}) => (
           <ListLink to="/about">About</ListLink>
           <ListLink to="/contact">Contact</ListLink>
         </ul>
-      {children}
       </header>
+      {children}
     </div>
     )}
   />
