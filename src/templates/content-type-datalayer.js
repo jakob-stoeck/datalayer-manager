@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import {css} from "@emotion/core"
 
 const Tableify = ({values}) => {
-  if (typeof values[0] === 'undefined') return null;
+  if (!(values && values[0])) return null;
   const columns = Object.keys(values[0])
   return (
     <table>
