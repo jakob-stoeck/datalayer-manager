@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import {css} from "@emotion/core"
 
 const Tableify = ({values}) => {
   if (!(values && values[0])) return null;

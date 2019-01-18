@@ -4,12 +4,12 @@ import Layout from "../components/layout"
 import {css} from "@emotion/core"
 
 
-const PostList = ({node}) => (
-  <div>
-    <h3 css={css`margin-bottom: 0.25rem;`}><Link to={node.fields.slug}>{node.frontmatter.title}</Link> - {node.frontmatter.date}</h3>
-    <p>{node.excerpt}</p>
-  </div>
-)
+// const PostList = ({node}) => (
+//   <div>
+//     <h3 css={css`margin-bottom: 0.25rem;`}><Link to={node.fields.slug}>{node.frontmatter.title}</Link> - {node.frontmatter.date}</h3>
+//     <p>{node.excerpt}</p>
+//   </div>
+// )
 
 const ContentfulList = ({node}) => (
   <li>
